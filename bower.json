@@ -1,0 +1,19 @@
+{
+  "name": "xtags-experiment",
+  "version": "0.0.0",
+  "authors": [
+    "Gavin King <plumpnation@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hello-world-xtag": "~0.1.2",
+    "brick": "mozbrick/brick#~2.0.0"
+  }
+}

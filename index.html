@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>X tags experiment</title>
+        <link rel="stylesheet" href="styles.css" charset="utf-8">
+        <script src="bower_components/platform/platform.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+        <link rel="import" href="hello-world-xtag/hello-world.html">
+    </head>
+    <body>
+        <hello-world id="thing" who="Gavin" age="0" config=""></hello-world>
+
+        <input id="slider" type="range" min="0" max="100" value="50">
+
+        <script charset="utf-8">
+            var slider = document.getElementById('slider'),
+                thing = document.getElementById('thing'),
+
+                onSlide = _.debounce(function (e) {
+                    thing.setAttribute('age', e.target.value);
+                }, 100);
+
+            thing.setAttribute('age', slider.value);
+
+            slider.addEventListener('change', onSlide, false);
+
+            window.setTimeout(function () {
+                thing.who = 'Birte';
+            }, 1000);
+        </script>
+    </body>
+</html>
